@@ -1,6 +1,7 @@
 ### Swagger implementation
  
-<details><summary>Swagger url</summary>
+<details>
+<summary>Swagger url</summary>
 <p>
 
 Once the application is started open below url
