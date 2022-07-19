@@ -11,8 +11,6 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
-import java.util.function.Predicate;
-
 @Configuration
 @EnableWebMvc
 public class SwaggerConfiguration {
@@ -22,8 +20,9 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.test"))
-                .paths(PathSelectors.ant("/home/**")
-                                .or(PathSelectors.ant("/api/**")))
+                //.paths(PathSelectors.ant("/home/**")
+                                //.or(PathSelectors.ant("/api/**")))
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
     }
@@ -32,11 +31,11 @@ public class SwaggerConfiguration {
         return new ApiInfoBuilder()
                 .title("Swagger Example")
                 .description("A Spring boot demo application for swagger")
-                .version("1.0")
-                .termsOfServiceUrl("")
+                .version("1.0.5")
+                //.termsOfServiceUrl("")
                 .contact(new Contact("Jyoti Kumar","https://github.com/jy-kumar","n/a"))
-                .license("")
-                .licenseUrl("")
+                //.license("")
+                //.licenseUrl("")
                 .build();
 
     }

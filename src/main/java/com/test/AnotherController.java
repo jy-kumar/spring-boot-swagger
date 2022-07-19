@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api")
-
 public class AnotherController {
     @GetMapping("/another")
     public String anotherUrl(){
